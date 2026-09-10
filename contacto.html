@@ -30,13 +30,67 @@
             <br><br>
         </nav>
     </header>
-    <main>
-        
-        
-      /*  ESCRIBIR SOLO ACÁ  */
+    <main> 
+            <h2> Contacto</h2> 
 
+            <section>
+                <h3>Escribinos</h3>
 
-        
+                <p>
+                    ¿Tenés alguna consulta sobre nuestros productos o tu pedido? 
+                    Completá el formulario y nos pondremos en contacto a la brevedad.
+                </p> 
+
+                <form action="./contacto.html" method="post">
+
+                    <p>
+                        <label for="id-nombre">Nombre y Apellido:</label>
+                        <input type="text" name="nombre" id="id-nombre" required>
+                    </p> 
+
+                    <p> 
+                        <label for="id-email">Correo electrónico:</label>
+                        <input type="email" name="email" id="id-email" required>
+                    </p>
+
+                    <p> 
+                        <label for="id-telefono">Teléfono:</label>
+                        <input type="tel" name="telefono" id="id-telefono" required>
+                    </p>
+
+                    <p> 
+                        <label for="id-asunto">Motivo de la consulta:</label>
+
+                        <select name="asunto" id="id-asunto" required>
+                            <option value="">Seleccione un motivo</option>
+                            <option value="general">Consulta general</option>
+                            <option value="pedido">Consulta sobre un pedido</option>
+                            <option value="productos">Consulta sobre un producto</option>
+                            <option value="otro">Otro</option>
+                        </select>
+                    </p>
+
+                    <p> 
+                        <label for="id-mensaje">Mensaje:</label>
+                        <textarea name="mensaje" id="id-mensaje" rows="4" required></textarea>
+                    </p> 
+                    <button type="reset">Limpiar</button>
+                    <button type="submit">Enviar consulta</button> 
+                </form> 
+            
+            </section> 
+
+            <section>
+                <h3>Información de contacto</h3>
+
+              
+                <ul>
+                    <li>Email: contacto@molidocafe.com.ar</li>
+                    <li>Teléfono: +54 351 1234567</li>
+                    <li>Dirección: Blvr. Chacabuco 490 - Bº Nueva Córdoba, Córdoba, Argentina</li>
+                </ul> 
+
+            </section>
     </main>
     <hr>
     <footer>
