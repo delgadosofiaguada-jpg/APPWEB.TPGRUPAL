@@ -39,6 +39,73 @@
         </section>
 
         <section>
+            <form action="./catalogo.html" method="GET">
+                <p>
+                    <input type="search" name="buscar" placeholder="Buscar productos..." aria-label="Buscar productos">
+                    
+                    <select name="categoria_busqueda" aria-label="Filtrar por categoría">
+                        <option value="">Categoría</option>
+                        <option value="granos">Granos</option>
+                        <option value="molido">Molido</option>
+                        <option value="capsulas">Cápsulas</option>
+                        <option value="accesorios">Accesorios</option>
+
+                    </select>
+                    
+                    <select name="orden" aria-label="Ordenar productos">
+                        <option value="relevancia">Ordenar: Relevancia</option>
+                        <option value="precio_asc">Ordenar: Precio ascendente</option>
+                        <option value="precio_desc">Ordenar: Precio descendente</option>
+                        <option value="nombre_asc">Ordenar: Nombre A-Z</option>
+                        <option value="nombre_desc">Ordenar: Destacados</option>
+                    </select>
+                </p>
+
+            
+                <h3>Filtros</h3>
+                <section>
+                    <h4>Categoría</h4>
+                    <input type="checkbox" id="cat-granos" name="categoria" value="granos">
+                    <label for="cat-granos">Granos</label><br>
+                    
+                    <input type="checkbox" id="cat-molido" name="categoria" value="molido">
+                    <label for="cat-molido">Molido</label><br>
+                    
+                    <input type="checkbox" id="cat-capsulas" name="categoria" value="capsulas">
+                    <label for="cat-capsulas">Cápsulas</label><br>
+                    
+                    <input type="checkbox" id="cat-accesorios" name="categoria" value="accesorios">
+                    <label for="cat-accesorios">Accesorios</label>
+                </section>
+                <br>
+                <section>
+                    <h4>Origen</h4>
+                    <input type="checkbox" id="ori-colombia" name="origen" value="colombia">
+                    <label for="ori-colombia">Colombia</label><br>
+                    
+                    <input type="checkbox" id="ori-brasil" name="origen" value="brasil">
+                    <label for="ori-brasil">Brasil</label><br>
+                    
+                    <input type="checkbox" id="ori-etiopia" name="origen" value="etiopia">
+                    <label for="ori-etiopia">Etiopía</label><br>
+                    
+                    <input type="checkbox" id="ori-otros" name="origen" value="otros">
+                    <label for="ori-otros">Otros</label>
+                </section>
+
+                <br>
+
+                <section>
+                    <h4>Rango de precio</h4>
+                    <label for="precio">$ </label>
+                    <input type="range" id="precio" name="precio" min="0" max="100">
+                    <span> $$$</span>
+                </section>
+            </form>
+        </section>
+
+        <hr>
+        <section>
             <h2>Cafés</h2>
 
             <article>
@@ -53,7 +120,7 @@
                 <button type="button">Agregar al carrito</button>
             </article>
 
-            <br>
+            <br><br>
 
             <article>
                 <img src="./recursos/imagenes/productos/pexels-agencia-bonito-1849970458-28495600 (3).jpg" alt="Café especial" width="250">
@@ -67,7 +134,7 @@
                 <button type="button">Agregar al carrito</button>
             </article>
         </section>
-
+        <br><br>
         <section>
             <h2>Capsulas</h2>
 
@@ -84,7 +151,7 @@
                 <button type="button">Agregar al carrito</button>
             </article>
         </section>
-
+        <br><br>
         <section>
             <h2>Pastelería</h2>
 
@@ -114,7 +181,7 @@
                 <button type="button">Agregar al carrito</button>
             </article>
         </section>
-
+        <br><br>
         <section>
             <h2>Combos</h2>
 
@@ -130,6 +197,7 @@
                 <button type="button">Agregar al carrito</button>
             </article>
         </section>
+        <br><br>
     </main>
     <hr>
     <footer>
