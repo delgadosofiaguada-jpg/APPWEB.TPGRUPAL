@@ -397,3 +397,121 @@ button, input, select, textarea {
     .filtro { flex: 1; min-width: 180px; }
 }
 /* <<< FIN CATÁLOGO */
+
+/* ============================================================
+   >>> SECCIÓN CARRITO  -  Delgado (Sofi)
+   ============================================================ */
+.item-carrito {
+    display: grid;
+    grid-template-columns: 90px 1fr;
+    gap: 4px 16px;
+    background-color: #fff;
+    border: 1px solid var(--borde);
+    border-radius: 12px;
+    padding: 16px;
+    margin-bottom: 16px;
+}
+
+.item-carrito__img {
+    grid-row: span 5;         /* la foto ocupa todas las filas de la izquierda */
+    width: 90px;
+    height: 90px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.item-carrito__detalle {
+    color: var(--cafe);
+    font-size: 0.9rem;
+}
+
+.item-carrito__subtotal {
+    font-weight: 600;
+}
+
+.item-carrito__eliminar {
+    justify-self: start;
+}
+
+.cantidad {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.cantidad__btn {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    border: 1px solid var(--cafe);
+    background-color: var(--crema);
+    cursor: pointer;
+}
+
+.cantidad__valor {
+    min-width: 24px;
+    text-align: center;
+    font-weight: 600;
+}
+
+.enlace-volver {
+    display: inline-block;
+    margin-top: 8px;
+    color: var(--cafe);
+}
+
+.resumen {
+    background-color: var(--crema-oscuro);
+    border-radius: 12px;
+    padding: 24px;
+}
+
+.resumen__titulo {
+    margin-bottom: 8px;
+}
+
+.resumen__linea {
+    display: flex;
+    justify-content: space-between;
+}
+
+.resumen__linea--total {
+    font-weight: 600;
+    font-size: 1.25rem;
+    border-top: 1px solid var(--borde);
+    margin-top: 8px;
+    padding-top: 8px;
+}
+
+.resumen__btn {
+    width: 100%;
+    margin: 16px 0;
+}
+
+.resumen__nota {
+    font-size: 0.85rem;
+    color: var(--cafe);
+    text-align: center;
+}
+
+
+@media (min-width: 900px) {
+    /* productos a la izquierda, resumen a la derecha */
+    .pagina-carrito .contenido {
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+        gap: 0 32px;
+        align-items: start;
+    }
+    .pagina-carrito .encabezado-pagina { grid-column: 1 / -1; }
+    .resumen { position: sticky; top: 100px; }
+}
+
+/* hover y foco de los botones +/- */
+.cantidad__btn { transition: background-color .2s; }
+.cantidad__btn:hover { background-color: var(--ambar); }
+.cantidad__btn:focus-visible { outline: 3px solid var(--ambar); outline-offset: 2px; }
+
+/* detalle visual del resumen */
+.resumen { border: 1px solid var(--borde); box-shadow: 0 2px 8px rgb(59 35 20 / 0.12); }
+/* <<< FIN CARRITO */
