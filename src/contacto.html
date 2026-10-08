@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Molido Café - Contacto</title>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Fraunces:wght@600;700&family=Inter:wght@400;600&display=swap"
+        rel="stylesheet"
+    >
+
+    <link
+        rel="stylesheet"
+        href="./recursos/estilos/estilos.css"
+    >
+</head>
+
+<body class="pagina-contacto">
+
+    <header class="cabecera">
+
+        <a
+            class="cabecera__logo"
+            href="./index.html"
+            aria-label="Ir al inicio"
+        >
+            <img
+                class="cabecera__img"
+                src="./recursos/imagenes/logocafe2 (4).jpg"
+                alt="Logo Molido Café"
+            >
+        </a>
+
+        <p class="cabecera__titulo">
+            Molido Café
+        </p>
+
+        <nav class="nav">
+
+            <a class="nav__link" href="./index.html">
+                Inicio
+            </a>
+
+            <a class="nav__link" href="./catalogo.html">
+                Catálogo
+            </a>
+
+            <a class="nav__link" href="./carrito.html">
+                Carrito
+            </a>
+
+            <a
+                class="nav__link nav__link--activo"
+                href="./contacto.html"
+            >
+                Contacto
+            </a>
+
+        </nav>
+
+    </header>
+
+
+    <main class="contenido">
+
+        <section class="encabezado-pagina">
+
+            <h1 class="encabezado-pagina__titulo">
+                Contacto
+            </h1>
+
+            <p class="encabezado-pagina__texto">
+                Estamos para ayudarte.
+            </p>
+
+        </section>
+
+
+        <section class="contacto-form">
+
+            <h2 class="contacto-form__titulo">
+                Escribinos
+            </h2>
+
+            <p class="contacto-form__texto">
+                ¿Tenés alguna consulta sobre nuestros productos o tu pedido?
+                Completá el formulario y nos pondremos en contacto a la brevedad.
+            </p>
+
+
+            <form
+                class="formulario"
+                action="./contacto.html"
+                method="post"
+            >
+
+                <p class="formulario__campo">
+
+                    <label
+                        class="formulario__label"
+                        for="id-nombre"
+                    >
+                        Nombre y Apellido:
+                    </label>
+
+                    <input
+                        class="formulario__control"
+                        type="text"
+                        name="nombre"
+                        id="id-nombre"
+                        required
+                    >
+
+                </p>
+
+
+                <p class="formulario__campo">
+
+                    <label
+                        class="formulario__label"
+                        for="id-email"
+                    >
+                        Correo electrónico:
+                    </label>
+
+                    <input
+                        class="formulario__control"
+                        type="email"
+                        name="email"
+                        id="id-email"
+                        required
+                    >
+
+                </p>
+
+
+                <p class="formulario__campo">
+
+                    <label
+                        class="formulario__label"
+                        for="id-telefono"
+                    >
+                        Teléfono:
+                    </label>
+
+                    <input
+                        class="formulario__control"
+                        type="tel"
+                        name="telefono"
+                        id="id-telefono"
+                        required
+                    >
+
+                </p>
+
+
+                <p class="formulario__campo">
+
+                    <label
+                        class="formulario__label"
+                        for="id-asunto"
+                    >
+                        Motivo de la consulta:
+                    </label>
+
+                    <select
+                        class="formulario__control"
+                        name="asunto"
+                        id="id-asunto"
+                        required
+                    >
+
+                        <option value="">
+                            Seleccione un motivo
+                        </option>
+
+                        <option value="general">
+                            Consulta general
+                        </option>
+
+                        <option value="pedido">
+                            Consulta sobre un pedido
+                        </option>
+
+                        <option value="productos">
+                            Consulta sobre un producto
+                        </option>
+
+                        <option value="otro">
+                            Otro
+                        </option>
+
+                    </select>
+
+                </p>
+
+
+                <p class="formulario__campo">
+
+                    <label
+                        class="formulario__label"
+                        for="id-mensaje"
+                    >
+                        Mensaje:
+                    </label>
+
+                    <textarea
+                        class="formulario__control"
+                        name="mensaje"
+                        id="id-mensaje"
+                        rows="5"
+                        required
+                    ></textarea>
+
+                </p>
+
+
+                <div class="formulario__acciones">
+
+                    <button
+                        class="btn btn--secundario"
+                        type="reset"
+                    >
+                        Limpiar
+                    </button>
+
+                    <button
+                        class="btn btn--primario"
+                        type="submit"
+                    >
+                        Enviar consulta
+                    </button>
+
+                </div>
+
+            </form>
+
+        </section>
+
+
+        <section class="contacto-info">
+
+            <h2 class="contacto-info__titulo">
+                Información de contacto
+            </h2>
+
+            <ul class="contacto-info__lista">
+
+                <li>
+                    Email: contacto@molidocafe.com.ar
+                </li>
+
+                <li>
+                    Teléfono: +54 351 1234567
+                </li>
+
+            </ul>
+
+
+            <h2 class="contacto-info__titulo">
+                ¿Dónde estamos?
+            </h2>
+
+            <p>
+                Blvr. Chacabuco 490 - Bº Nueva Córdoba,
+                Córdoba, Argentina.
+            </p>
+
+
+            <iframe
+                class="mapa"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3404.6772341381975!2d-64.1826746!3d-31.4230177!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9432a290060d89b5%3A0xf4e95fa484885980!2sBlvr.%20Chacabuco%20490%2C%20X5000IIE%20C%C3%B3rdoba!5e0!3m2!1ses!2sar!4v1789059859459!5m2!1ses!2sar"
+                title="Ubicación de Molido Café"
+                allowfullscreen=""
+                loading="lazy"
+                referrerpolicy="strict-origin-when-cross-origin"
+            ></iframe>
+
+        </section>
+
+    </main>
+
+
+    <footer class="pie">
+
+        <p>
+            &copy; 2024 Molido Café. Todos los derechos reservados.
+        </p>
+
+        <ul class="pie__lista">
+
+            <li>
+                <a
+                    class="pie__link"
+                    href="https://instagram.com/@MolidoCafe"
+                    target="_blank"
+                >
+                    @MolidoCafe
+                </a>
+            </li>
+
+            <li>
+                Blvr. Chacabuco 490 - Bº Nueva Córdoba
+            </li>
+
+        </ul>
+
+    </footer>
+
+</body>
+
+</html>

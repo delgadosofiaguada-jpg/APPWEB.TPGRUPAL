@@ -593,6 +593,85 @@ textarea {
 
 }
 
+
+    /* Inicio */
+
+    .hero__img {
+        height: 430px;
+    }
+
+    .hero__texto {
+        padding: 48px;
+    }
+
+    .hero__bajada {
+        font-size: 1.2rem;
+    }
+
+
+    /* Catálogo */
+
+    .buscador__form {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .buscador__fila {
+        grid-column: 1 / -1;
+    }
+
+    .filtros__titulo {
+        grid-column: 1 / -1;
+    }
+
+
+    /* Carrito */
+
+    .pagina-carrito .contenido {
+        display: grid;
+
+        grid-template-columns: 2fr 1fr;
+
+        gap: 0 32px;
+
+        align-items: start;
+    }
+
+    .pagina-carrito .encabezado-pagina {
+        grid-column: 1 / -1;
+    }
+
+    .resumen {
+        position: sticky;
+
+        top: 100px;
+
+        margin-top: 0;
+    }
+
+
+    /* Contacto */
+
+    .pagina-contacto .contenido {
+        display: grid;
+
+        grid-template-columns: 1fr 1fr;
+
+        gap: 32px;
+
+        align-items: start;
+    }
+
+    .pagina-contacto .encabezado-pagina {
+        grid-column: 1 / -1;
+    }
+
+    .contacto-info {
+        margin-top: 0;
+    }
+
+
+
+
 /* ============================================================
    CATÁLOGO
    ============================================================ */
