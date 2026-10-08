@@ -257,3 +257,77 @@ button, input, select, textarea {
 
 .tarjeta__precio + .tarjeta__btn { margin-top: 16px; }
 
+============================================================
+   >>> SECCIÓN CONTACTO  -  Astudillo (Guada)
+   ============================================================ */
+.formulario__campo {
+    display: grid;
+    gap: 4px;
+    margin-bottom: 16px;
+}
+
+.formulario__label {
+    font-weight: 600;
+}
+
+.formulario__control {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid var(--borde);
+    border-radius: 12px;
+    background-color: #fff;
+}
+
+.formulario__control:focus {
+    outline: 3px solid var(--ambar);
+    border-color: var(--ambar);
+}
+
+/* pseudoclase: solo marca error después de que el usuario escribió */
+.formulario__control:user-invalid {
+    border-color: var(--error);
+}
+
+.contacto-info__lista {
+    display: grid;
+    gap: 4px;
+    margin-bottom: 24px;
+}
+
+.mapa {
+    width: 100%;
+    height: 300px;
+    border: 0;
+    border-radius: 12px;
+    margin-top: 8px;
+}
+
+
+@media (min-width: 900px) {
+    /* formulario e info lado a lado */
+    .pagina-contacto .contenido {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 32px;
+        align-items: start;
+    }
+    .pagina-contacto .encabezado-pagina__titulo { grid-column: 1 / -1; }
+}
+
+/* tarjeta contenedora del formulario */
+.contacto-form {
+    background-color: #fff;
+    border: 1px solid var(--borde);
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgb(59 35 20 / 0.12);
+    padding: 24px;
+}
+.contacto-form__texto { margin-bottom: 16px; color: var(--cafe); }
+
+.formulario .btn { margin-right: 8px; }
+
+/* validación: solo después de que el usuario escribe */
+.formulario__control:user-invalid { background-color: rgb(179 38 30 / 0.06); }
+.formulario__control:user-valid { border-color: var(--ambar); }
+/* <<< FIN CONTACTO */
+
