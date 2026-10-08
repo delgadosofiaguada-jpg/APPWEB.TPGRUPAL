@@ -1,0 +1,123 @@
+:root {
+    --cafe-oscuro: #3b2314;
+    --cafe: #6f4524;
+    --ambar: #e8901a;
+    --ambar-oscuro: #c4720a;
+    --crema: #fbf5ea;
+    --crema-oscuro: #f1e4cd;
+    --borde: #e3d3b8;
+    --error: #b3261e;
+}
+
+
+/* ---------- SELECTOR UNIVERSAL ---------- */
+* {
+    /* padding y borde NO suman al ancho/alto total */
+    box-sizing: border-box;
+    margin: 0;
+}
+
+
+/* ---------- SELECTORES DE TIPO (base del documento) ---------- */
+html {
+    /* elemento raíz: tipografía y tamaño de referencia para los rem */
+    font-family: 'Inter', Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 16px;
+}
+
+body {
+    background-color: var(--crema);
+    color: var(--cafe-oscuro);
+    line-height: 1.6;
+    /* body en columna: el footer siempre queda abajo */
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+h1, h2, h3, h4 {
+    font-family: 'Fraunces', Georgia, serif;
+    line-height: 1.2;
+}
+h1 { font-size: 2rem; }
+h2 { font-size: 1.5rem; }
+h3 { font-size: 1.15rem; }
+h4 { font-size: 1rem; }
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+ul {
+    padding: 0;
+    list-style: none;
+}
+
+a {
+    color: inherit;
+}
+
+button, input, select, textarea {
+    font: inherit;
+}
+
+
+/* 
+   CLASES COMPARTIDAS (las usan todas las páginas)
+  */
+
+/* ----- ENCABEZADO ----- */
+.cabecera {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    background-color: var(--cafe-oscuro);
+    color: var(--crema);
+    display: flex;
+    flex-wrap: wrap;          /* en celular el menú baja a otra fila */
+    align-items: center;
+    gap: 8px 16px;
+    padding: 8px 16px;
+}
+
+.cabecera__img {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.cabecera__titulo {
+    color: var(--ambar);
+    font-size: 1.5rem;
+    margin-right: auto;       /* empuja el menú a la derecha */
+}
+
+/* ----- MENÚ ----- */
+.nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    width: 100%;
+}
+
+.nav__link {
+    text-decoration: none;
+    color: var(--crema);
+    padding: 6px 14px;
+    border-radius: 999px;
+}
+
+.nav__link:hover {
+    background-color: rgb(255 255 255 / 0.15);
+}
+
+.nav__link--activo {
+    background-color: var(--ambar);
+    color: var(--cafe-oscuro);
+    font-weight: 600;
+}
+
+
