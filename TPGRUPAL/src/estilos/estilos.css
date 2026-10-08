@@ -257,7 +257,7 @@ button, input, select, textarea {
 
 .tarjeta__precio + .tarjeta__btn { margin-top: 16px; }
 
-============================================================
+/*============================================================
    >>> SECCIÓN CONTACTO  -  Astudillo (Guada)
    ============================================================ */
 .formulario__campo {
@@ -331,3 +331,69 @@ button, input, select, textarea {
 .formulario__control:user-valid { border-color: var(--ambar); }
 /* <<< FIN CONTACTO */
 
+/* ============================================================
+   >>> SECCIÓN CATÁLOGO  -  Gaido
+   ============================================================ */
+.buscador__fila {
+    display: grid;
+    gap: 8px;
+}
+
+.buscador__input,
+.buscador__select {
+    padding: 10px 12px;
+    border: 1px solid var(--borde);
+    border-radius: 12px;
+    background-color: #fff;
+}
+
+.filtros__titulo {
+    margin-top: 24px;
+}
+
+.filtro {
+    margin: 16px 0;
+}
+
+.filtro__titulo {
+    margin-bottom: 4px;
+    color: var(--cafe);
+}
+
+.filtro__check {
+    accent-color: var(--ambar);
+    margin-right: 4px;
+}
+
+.filtro__rango {
+    accent-color: var(--ambar);
+    width: 100%;
+    max-width: 300px;
+}
+
+
+@media (min-width: 600px) {
+    .buscador__fila { grid-template-columns: 2fr 1fr 1fr; }
+}
+
+/* cada checkbox en su propia línea */
+.filtro__check { display: block; }
+
+/* títulos de categoría con detalle */
+.categoria .seccion__titulo {
+    padding-bottom: 8px;
+    border-bottom: 2px solid var(--ambar);
+}
+
+/* hover en tarjetas */
+.categoria .tarjeta { transition: transform .2s, box-shadow .2s; }
+.categoria .tarjeta:hover { transform: translateY(-4px); box-shadow: 0 6px 16px rgb(59 35 20 / 0.2); }
+
+/* desktop: los 3 filtros uno al lado del otro */
+@media (min-width: 900px) {
+    .buscador__form { display: flex; flex-wrap: wrap; gap: 0 32px; }
+    .buscador__fila,
+    .filtros__titulo { flex-basis: 100%; }
+    .filtro { flex: 1; min-width: 180px; }
+}
+/* <<< FIN CATÁLOGO */
