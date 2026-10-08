@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Molido Café - Catálogo</title>
+
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Fraunces:wght@600;700&family=Inter:wght@400;600&display=swap"
+        rel="stylesheet"
+    >
+
+    <link
+        rel="stylesheet"
+        href="./recursos/estilos/estilos.css"
+    >
+</head>
+
+<body class="pagina-catalogo">
+
+    <header class="cabecera">
+
+        <a
+            class="cabecera__logo"
+            href="./index.html"
+            aria-label="Ir al inicio"
+        >
+            <img
+                class="cabecera__img"
+                src="./recursos/imagenes/logocafe2 (4).jpg"
+                alt="Logo Molido Café"
+            >
+        </a>
+
+        <p class="cabecera__titulo">
+            Molido Café
+        </p>
+
+        <nav class="nav">
+
+            <a class="nav__link" href="./index.html">
+                Inicio
+            </a>
+
+            <a
+                class="nav__link nav__link--activo"
+                href="./catalogo.html"
+            >
+                Catálogo
+            </a>
+
+            <a class="nav__link" href="./carrito.html">
+                Carrito
+            </a>
+
+            <a class="nav__link" href="./contacto.html">
+                Contacto
+            </a>
+
+        </nav>
+
+    </header>
+
+
+    <main class="contenido">
+
+        <section class="encabezado-pagina">
+
+            <h1 class="encabezado-pagina__titulo">
+                Catálogo
+            </h1>
+
+            <p class="encabezado-pagina__texto">
+                Conocé nuestros productos y elegí tu favorito.
+            </p>
+
+        </section>
+
+
+        <section class="buscador">
+
+            <form
+                class="buscador__form"
+                action="./catalogo.html"
+                method="get"
+            >
+
+                <div class="buscador__fila">
+
+                    <input
+                        class="buscador__input"
+                        type="search"
+                        name="buscar"
+                        placeholder="Buscar productos..."
+                        aria-label="Buscar productos"
+                    >
+
+                    <select
+                        class="buscador__select"
+                        name="categoria_busqueda"
+                        aria-label="Filtrar por categoría"
+                    >
+
+                        <option value="">
+                            Categoría
+                        </option>
+
+                        <option value="granos">
+                            Granos
+                        </option>
+
+                        <option value="molido">
+                            Molido
+                        </option>
+
+                        <option value="capsulas">
+                            Cápsulas
+                        </option>
+
+                        <option value="accesorios">
+                            Accesorios
+                        </option>
+
+                    </select>
+
+
+                    <select
+                        class="buscador__select"
+                        name="orden"
+                        aria-label="Ordenar productos"
+                    >
+
+                        <option value="relevancia">
+                            Ordenar: Relevancia
+                        </option>
+
+                        <option value="precio_asc">
+                            Precio ascendente
+                        </option>
+
+                        <option value="precio_desc">
+                            Precio descendente
+                        </option>
+
+                        <option value="nombre_asc">
+                            Nombre A-Z
+                        </option>
+
+                        <option value="nombre_desc">
+                            Destacados
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <h2 class="filtros__titulo">
+                    Filtros
+                </h2>
+
+
+                <section class="filtro">
+
+                    <h3 class="filtro__titulo">
+                        Categoría
+                    </h3>
+
+                    <label class="filtro__opcion">
+                        <input
+                            class="filtro__check"
+                            type="checkbox"
+                            name="categoria"
+                            value="granos"
+                        >
+                        Granos
+                    </label>
+
+                    <label class="filtro__opcion">
+                        <input
+                            class="filtro__check"
+                            type="checkbox"
+                            name="categoria"
+                            value="molido"
+                        >
+                        Molido
+                    </label>
+
+                    <label class="filtro__opcion">
+                        <input
+                            class="filtro__check"
+                            type="checkbox"
+                            name="categoria"
+                            value="capsulas"
+                        >
+                        Cápsulas
+                    </label>
+
+                    <label class="filtro__opcion">
+                        <input
+                            class="filtro__check"
+                            type="checkbox"
+                            name="categoria"
+                            value="accesorios"
+                        >
+                        Accesorios
+                    </label>
+
+                </section>
+
+
+                <section class="filtro">
+
+                    <h3 class="filtro__titulo">
+                        Origen
+                    </h3>
+
+                    <label class="filtro__opcion">
+                        <input
+                            class="filtro__check"
+                            type="checkbox"
+                            name="origen"
+                            value="colombia"
+                        >
+                        Colombia
+                    </label>
+
+                    <label class="filtro__opcion">
+                        <input
+                            class="filtro__check"
+                            type="checkbox"
+                            name="origen"
+                            value="brasil"
+                        >
+                        Brasil
+                    </label>
+
+                    <label class="filtro__opcion">
+                        <input
+                            class="filtro__check"
+                            type="checkbox"
+                            name="origen"
+                            value="etiopia"
+                        >
+                        Etiopía
+                    </label>
+
+                    <label class="filtro__opcion">
+                        <input
+                            class="filtro__check"
+                            type="checkbox"
+                            name="origen"
+                            value="otros"
+                        >
+                        Otros
+                    </label>
+
+                </section>
+
+
+                <section class="filtro">
+
+                    <h3 class="filtro__titulo">
+                        Rango de precio
+                    </h3>
+
+                    <label for="precio">
+                        Precio
+                    </label>
+
+                    <input
+                        class="filtro__rango"
+                        type="range"
+                        id="precio"
+                        name="precio"
+                        min="0"
+                        max="100"
+                    >
+
+                </section>
+
+            </form>
+
+        </section>
+
+
+        <section class="seccion categoria">
+
+            <h2 class="seccion__titulo">
+                Cafés
+            </h2>
+
+            <div class="grilla">
+
+                <article class="tarjeta">
+
+                    <img
+                        class="tarjeta__img"
+                        src="./recursos/imagenes/productos/cafe_origen.jpg"
+                        alt="Café de origen"
+                    >
+
+                    <h3 class="tarjeta__titulo">
+                        Café Origen
+                    </h3>
+
+                    <p class="tarjeta__detalle">
+                        Grano 250 g
+                    </p>
+
+                    <p class="tarjeta__precio">
+                        $9.500
+                    </p>
+
+                    <button
+                        class="btn btn--primario tarjeta__btn"
+                        type="button"
+                    >
+                        Agregar al carrito
+                    </button>
+
+                </article>
+
+
+                <article class="tarjeta">
+
+                    <img
+                        class="tarjeta__img"
+                        src="./recursos/imagenes/productos/pexels-agencia-bonito-1849970458-28495600 (3).jpg"
+                        alt="Café especial"
+                    >
+
+                    <h3 class="tarjeta__titulo">
+                        Espresso Blend
+                    </h3>
+
+                    <p class="tarjeta__detalle">
+                        Grano 500 g
+                    </p>
+
+                    <p class="tarjeta__precio">
+                        $8.500
+                    </p>
+
+                    <button
+                        class="btn btn--primario tarjeta__btn"
+                        type="button"
+                    >
+                        Agregar al carrito
+                    </button>
+
+                </article>
+
+            </div>
+
+        </section>
+
+
+        <section class="seccion categoria">
+
+            <h2 class="seccion__titulo">
+                Cápsulas
+            </h2>
+
+            <div class="grilla">
+
+                <article class="tarjeta">
+
+                    <img
+                        class="tarjeta__img"
+                        src="./recursos/imagenes/productos/pexels-diego-lopez-3192702-27898475 (1).jpg"
+                        alt="Cápsulas de café"
+                    >
+
+                    <h3 class="tarjeta__titulo">
+                        Cápsulas Molido
+                    </h3>
+
+                    <p class="tarjeta__detalle">
+                        Pack de 10 cápsulas
+                    </p>
+
+                    <p class="tarjeta__precio">
+                        $7.500
+                    </p>
+
+                    <button
+                        class="btn btn--primario tarjeta__btn"
+                        type="button"
+                    >
+                        Agregar al carrito
+                    </button>
+
+                </article>
+
+            </div>
+
+        </section>
+
+
+        <section class="seccion categoria">
+
+            <h2 class="seccion__titulo">
+                Pastelería
+            </h2>
+
+            <div class="grilla">
+
+                <article class="tarjeta">
+
+                    <img
+                        class="tarjeta__img"
+                        src="./recursos/imagenes/productos/factura.jpg"
+                        alt="Croissant artesanal"
+                    >
+
+                    <h3 class="tarjeta__titulo">
+                        Croissant
+                    </h3>
+
+                    <p class="tarjeta__detalle">
+                        Croissant artesanal de manteca
+                    </p>
+
+                    <p class="tarjeta__precio">
+                        $4.500
+                    </p>
+
+                    <button
+                        class="btn btn--primario tarjeta__btn"
+                        type="button"
+                    >
+                        Agregar al carrito
+                    </button>
+
+                </article>
+
+
+                <article class="tarjeta">
+
+                    <img
+                        class="tarjeta__img"
+                        src="./recursos/imagenes/productos/torta-de-chocolate.jpg"
+                        alt="Porción de torta de chocolate"
+                    >
+
+                    <h3 class="tarjeta__titulo">
+                        Torta de chocolate
+                    </h3>
+
+                    <p class="tarjeta__detalle">
+                        Porción individual
+                    </p>
+
+                    <p class="tarjeta__precio">
+                        $6.000
+                    </p>
+
+                    <button
+                        class="btn btn--primario tarjeta__btn"
+                        type="button"
+                    >
+                        Agregar al carrito
+                    </button>
+
+                </article>
+
+            </div>
+
+        </section>
+
+
+        <section class="seccion categoria">
+
+            <h2 class="seccion__titulo">
+                Combos
+            </h2>
+
+            <div class="grilla">
+
+                <article class="tarjeta">
+
+                    <img
+                        class="tarjeta__img"
+                        src="./recursos/imagenes/productos/CafeConFactura.jpg"
+                        alt="Combo de café y pastelería"
+                    >
+
+                    <h3 class="tarjeta__titulo">
+                        Combo Merienda
+                    </h3>
+
+                    <p class="tarjeta__detalle">
+                        Café + croissant
+                    </p>
+
+                    <p class="tarjeta__precio">
+                        $12.000
+                    </p>
+
+                    <button
+                        class="btn btn--primario tarjeta__btn"
+                        type="button"
+                    >
+                        Agregar al carrito
+                    </button>
+
+                </article>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <footer class="pie">
+
+        <p>
+            &copy; 2024 Molido Café. Todos los derechos reservados.
+        </p>
+
+        <ul class="pie__lista">
+
+            <li>
+                <a
+                    class="pie__link"
+                    href="https://instagram.com/@MolidoCafe"
+                    target="_blank"
+                >
+                    @MolidoCafe
+                </a>
+            </li>
+
+            <li>
+                Blvr. Chacabuco 490 - Bº Nueva Córdoba
+            </li>
+
+        </ul>
+
+    </footer>
+
+</body>
+
+</html>

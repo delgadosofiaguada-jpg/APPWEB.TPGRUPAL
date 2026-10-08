@@ -592,3 +592,97 @@ textarea {
     }
 
 }
+
+/* ============================================================
+   CATÁLOGO
+   ============================================================ */
+
+.buscador {
+    margin-bottom: 34px;
+
+    padding: 20px;
+
+    border: 1px solid var(--borde);
+    border-radius: var(--radio);
+
+    background-color: var(--blanco);
+
+    box-shadow: var(--sombra);
+}
+
+.buscador__form {
+    display: grid;
+    gap: 20px;
+}
+
+.buscador__fila {
+    display: grid;
+    gap: 10px;
+}
+
+.buscador__input,
+.buscador__select {
+    width: 100%;
+
+    padding: 11px 12px;
+
+    border: 1px solid var(--borde);
+    border-radius: 10px;
+
+    background-color: var(--blanco);
+    color: var(--texto);
+}
+
+.buscador__input:focus,
+.buscador__select:focus {
+    outline: 3px solid var(--mostaza-claro);
+    border-color: var(--mostaza-oscuro);
+}
+
+.filtros__titulo {
+    margin-top: 4px;
+}
+
+.filtro {
+    padding: 14px;
+
+    border-radius: 10px;
+
+    background-color: var(--crema);
+}
+
+.filtro__titulo {
+    margin-bottom: 8px;
+
+    color: var(--verde-oscuro);
+}
+
+.filtro__opcion {
+    display: flex;
+    align-items: center;
+
+    gap: 7px;
+
+    margin: 6px 0;
+}
+
+.filtro__check,
+.filtro__rango {
+    accent-color: var(--verde);
+}
+
+.filtro__rango {
+    width: 100%;
+    max-width: 320px;
+}
+
+.categoria {
+    margin-top: 40px;
+}
+
+.categoria .seccion__titulo {
+    padding-bottom: 8px;
+
+    border-bottom: 2px solid var(--mostaza);
+}
+
