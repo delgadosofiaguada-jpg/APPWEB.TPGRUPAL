@@ -121,3 +121,139 @@ button, input, select, textarea {
 }
 
 
+/* ----- CONTENIDO PRINCIPAL ----- */
+.contenido {
+    flex: 1;                  /* ocupa el espacio libre entre header y footer */
+    width: 100%;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 24px 16px;
+}
+
+/* ----- PIE ----- */
+.pie {
+    background-color: var(--cafe-oscuro);
+    color: var(--crema);
+    padding: 24px 16px;
+    text-align: center;
+    font-size: 0.9rem;
+}
+
+.pie__lista {
+    margin-top: 8px;
+    display: grid;
+    gap: 4px;
+}
+
+.pie__link {
+    color: var(--ambar);
+}
+
+/* ----- BOTONES ----- */
+.btn {
+    display: inline-block;
+    border: 2px solid transparent;
+    border-radius: 12px;
+    padding: 10px 20px;
+    font-weight: 600;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.btn--primario {
+    background-color: var(--ambar);
+    color: var(--cafe-oscuro);
+}
+
+.btn--primario:hover {
+    background-color: var(--ambar-oscuro);
+    color: #fff;
+}
+
+.btn--secundario {
+    background-color: transparent;
+    border-color: var(--cafe);
+    color: var(--cafe);
+}
+
+.btn--secundario:hover {
+    background-color: var(--crema-oscuro);
+}
+
+.btn--texto {
+    background: none;
+    color: var(--error);
+    text-decoration: underline;
+    padding: 4px 8px;
+}
+
+/* ----- TÍTULOS DE SECCIÓN Y ENCABEZADO DE PÁGINA ----- */
+.seccion {
+    margin: 32px 0;
+}
+
+.seccion__titulo {
+    margin-bottom: 16px;
+}
+
+.encabezado-pagina {
+    margin-bottom: 24px;
+}
+
+.encabezado-pagina__titulo {
+    margin-bottom: 8px;
+}
+
+/* ----- GRILLA Y TARJETA DE PRODUCTO (Inicio y Catálogo) ----- */
+.grilla {
+    display: grid;
+    grid-template-columns: 1fr;   /* 1 columna en celular */
+    gap: 24px;
+}
+
+.tarjeta {
+    background-color: #fff;
+    border: 1px solid var(--borde);
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgb(59 35 20 / 0.12);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.tarjeta__img {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+}
+
+.tarjeta__titulo,
+.tarjeta__desc,
+.tarjeta__detalle,
+.tarjeta__precio,
+.tarjeta__btn {
+    margin-left: 16px;
+    margin-right: 16px;
+}
+
+.tarjeta__titulo { margin-top: 16px; }
+
+.tarjeta__desc,
+.tarjeta__detalle {
+    color: var(--cafe);
+    font-size: 0.95rem;
+}
+
+.tarjeta__precio {
+    font-weight: 600;
+    font-size: 1.2rem;
+    margin-top: 8px;
+}
+
+.tarjeta__btn {
+    margin-top: auto;
+    margin-bottom: 16px;
+}
+
+.tarjeta__precio + .tarjeta__btn { margin-top: 16px; }
+
