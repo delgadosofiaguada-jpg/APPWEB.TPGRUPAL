@@ -1,5 +1,18 @@
 /* ============================================================
-   1. VARIABLES
+   MOLIDO CAFÉ — HOJA DE ESTILOS
+   Orden de la hoja (de lo general a lo particular):
+   1. Variables y reseteo
+   2. Elementos base (etiquetas)
+   3. Componentes genéricos (.btn, .grilla, .tarjeta, .formulario...)
+   4. Componentes de estructura (cabecera, nav, pie, contenido)
+   5. Componentes por página (inicio, catálogo, carrito, contacto...)
+   6. Reglas contextuales (selectores combinados)
+   7. Media queries (mobile first)
+   ============================================================ */
+
+
+/* ============================================================
+   1. VARIABLES Y RESETEO
    ============================================================ */
 
 :root {
@@ -24,19 +37,18 @@
     --sombra-hover: 0 8px 22px rgb(47 74 62 / 0.16);
 
     --radio: 14px;
-    --radio-chico: 10px;
 }
-
-
-/* ============================================================
-   2. RESET Y ELEMENTOS BASE (selectores de tipo)
-   ============================================================ */
 
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
+
+
+/* ============================================================
+   2. ELEMENTOS BASE
+   ============================================================ */
 
 html {
     font-family: 'Inter', Verdana, Geneva, Tahoma, sans-serif;
@@ -45,15 +57,14 @@ html {
 }
 
 body {
+    background-color: var(--crema);
+    color: var(--texto);
+    line-height: 1.6;
+
     min-height: 100vh;
 
     display: flex;
     flex-direction: column;
-
-    background-color: var(--crema);
-    color: var(--texto);
-
-    line-height: 1.6;
 }
 
 h1,
@@ -74,13 +85,9 @@ p {
     margin-bottom: 8px;
 }
 
-img,
-iframe {
+img {
     display: block;
     max-width: 100%;
-}
-
-img {
     height: auto;
 }
 
@@ -99,20 +106,26 @@ textarea {
     font: inherit;
 }
 
+[hidden] {
+    display: none !important;
+}
+
 
 /* ============================================================
-   3. COMPONENTES GENÉRICOS (reutilizables en todo el sitio)
+   3. COMPONENTES GENÉRICOS
+   (se reutilizan en varias páginas; van primero para controlar
+   la especificidad: lo particular los pisa después)
    ============================================================ */
 
-/* --- Botones --- */
+/* ----- Botones ----- */
 
 .btn {
     display: inline-block;
 
-    padding: 10px 18px;
-
     border: 2px solid transparent;
-    border-radius: var(--radio-chico);
+    border-radius: 10px;
+
+    padding: 10px 18px;
 
     cursor: pointer;
 
@@ -130,6 +143,12 @@ textarea {
     transform: translateY(-1px);
 }
 
+.btn[aria-disabled="true"] {
+    opacity: 0.5;
+
+    pointer-events: none;
+}
+
 .btn--primario {
     background-color: var(--mostaza);
     color: var(--verde-oscuro);
@@ -141,9 +160,10 @@ textarea {
 }
 
 .btn--secundario {
+    background-color: transparent;
+
     border-color: var(--verde);
 
-    background-color: transparent;
     color: var(--verde-oscuro);
 }
 
@@ -156,58 +176,23 @@ textarea {
 
     border: 0;
 
-    background-color: transparent;
+    background: transparent;
     color: var(--error);
 
     text-decoration: underline;
 }
 
-/* --- Campos de formulario (buscador y contacto) --- */
-
-.formulario__control,
-.buscador__input,
-.buscador__select {
-    width: 100%;
-
-    padding: 11px 12px;
-
-    border: 1px solid var(--borde);
-    border-radius: var(--radio-chico);
-
-    background-color: var(--blanco);
-    color: var(--texto);
-}
-
-.formulario__control:focus,
-.buscador__input:focus,
-.buscador__select:focus {
-    outline: 3px solid var(--mostaza-claro);
-    border-color: var(--mostaza-oscuro);
-}
-
-/* --- Caja (panel blanco/amarillo con borde y sombra) --- */
-
-.buscador,
-.formulario,
-.contacto-info,
-.resumen,
-.propuesta,
-.item-carrito {
-    border: 1px solid var(--borde);
-    border-radius: var(--radio);
-
-    box-shadow: var(--sombra);
-}
-
-/* --- Grilla --- */
+/* ----- Grilla ----- */
 
 .grilla {
     display: grid;
+
     grid-template-columns: 1fr;
+
     gap: 24px;
 }
 
-/* --- Secciones y encabezados --- */
+/* ----- Secciones ----- */
 
 .seccion {
     margin: 36px 0;
@@ -217,19 +202,7 @@ textarea {
     margin-bottom: 18px;
 }
 
-.encabezado-pagina {
-    margin-bottom: 28px;
-}
-
-.encabezado-pagina__titulo {
-    margin-bottom: 8px;
-}
-
-.encabezado-pagina__texto {
-    color: var(--texto-suave);
-}
-
-/* --- Tarjetas de producto --- */
+/* ----- Tarjetas ----- */
 
 .tarjeta {
     display: flex;
@@ -256,6 +229,7 @@ textarea {
 
 .tarjeta__img {
     width: 100%;
+
     aspect-ratio: 4 / 3;
     object-fit: cover;
 }
@@ -264,7 +238,7 @@ textarea {
 .tarjeta__desc,
 .tarjeta__detalle,
 .tarjeta__precio,
-.tarjeta .btn {
+.tarjeta__btn {
     margin-left: 18px;
     margin-right: 18px;
 }
@@ -288,20 +262,146 @@ textarea {
     font-weight: 700;
 }
 
-/* El botón dentro de la tarjeta queda abajo y alineado a la izquierda */
-.tarjeta .btn {
+.tarjeta__btn {
     margin-top: 16px;
     margin-bottom: 18px;
 
     align-self: flex-start;
 }
 
+/* ----- Formularios ----- */
+
+.formulario {
+    display: grid;
+
+    gap: 16px;
+}
+
+.formulario__campo {
+    display: grid;
+
+    gap: 6px;
+
+    margin-bottom: 0;
+}
+
+.formulario__label {
+    color: var(--verde-oscuro);
+
+    font-weight: 600;
+}
+
+.formulario__control {
+    width: 100%;
+
+    padding: 11px 12px;
+
+    border: 1px solid var(--borde);
+    border-radius: 10px;
+
+    background-color: var(--blanco);
+    color: var(--texto);
+}
+
+.formulario__control:focus {
+    outline: 3px solid var(--mostaza-claro);
+    border-color: var(--mostaza-oscuro);
+}
+
+.formulario__control:user-invalid {
+    border-color: var(--error);
+}
+
+textarea.formulario__control {
+    resize: vertical;
+}
+
+.formulario__acciones {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+
+    gap: 12px;
+}
+
+.formulario__estado {
+    margin-top: 16px;
+    padding: 12px 14px;
+
+    border-radius: 10px;
+
+    background-color: var(--verde-claro);
+    color: var(--verde-oscuro);
+
+    font-weight: 600;
+}
+
+/* ----- Recuadro de resumen (carrito y pedido) ----- */
+
+.resumen {
+    margin-top: 28px;
+    padding: 24px;
+
+    border: 1px solid var(--borde);
+    border-radius: var(--radio);
+
+    background-color: var(--mostaza-claro);
+
+    box-shadow: var(--sombra);
+}
+
+.resumen__titulo {
+    margin-bottom: 14px;
+}
+
+.resumen__productos {
+    display: grid;
+
+    gap: 6px;
+
+    margin-bottom: 14px;
+
+    font-size: 0.95rem;
+}
+
+.resumen__linea {
+    display: flex;
+    justify-content: space-between;
+
+    gap: 16px;
+
+    margin-bottom: 8px;
+}
+
+.resumen__linea--total {
+    margin-top: 12px;
+    padding-top: 12px;
+
+    border-top: 1px solid var(--mostaza-oscuro);
+
+    font-size: 1.2rem;
+    font-weight: 700;
+}
+
+.resumen__btn {
+    width: 100%;
+
+    margin: 16px 0;
+}
+
+.resumen__nota {
+    margin-bottom: 0;
+
+    color: var(--texto-suave);
+
+    font-size: 0.85rem;
+    text-align: center;
+}
+
 
 /* ============================================================
-   4. ESTRUCTURA (header, contenido, footer)
+   4. ESTRUCTURA: CABECERA, NAVEGACIÓN, CONTENIDO, PIE
    ============================================================ */
-
-/* --- Header --- */
 
 .cabecera {
     position: sticky;
@@ -311,6 +411,7 @@ textarea {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
+
     gap: 10px 16px;
 
     padding: 10px 16px;
@@ -332,12 +433,12 @@ textarea {
 
     object-fit: cover;
 
-    border: 2px solid var(--mostaza);
     border-radius: 50%;
+    border: 2px solid var(--mostaza);
 }
 
 .cabecera__titulo {
-    margin: 0 auto 0 0;
+    margin-right: auto;
 
     color: var(--mostaza-claro);
 
@@ -346,14 +447,13 @@ textarea {
     font-weight: 700;
 }
 
-/* --- Navegación --- */
-
 .nav {
     display: flex;
     flex-wrap: wrap;
-    gap: 6px;
 
     width: 100%;
+
+    gap: 6px;
 }
 
 .nav__link {
@@ -381,7 +481,21 @@ textarea {
     font-weight: 600;
 }
 
-/* --- Contenido principal --- */
+.nav__contador {
+    display: inline-block;
+
+    min-width: 22px;
+    padding: 0 6px;
+
+    border-radius: 999px;
+
+    background-color: var(--mostaza);
+    color: var(--verde-oscuro);
+
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-align: center;
+}
 
 .contenido {
     flex: 1;
@@ -393,7 +507,17 @@ textarea {
     padding: 28px 16px;
 }
 
-/* --- Footer --- */
+.encabezado-pagina {
+    margin-bottom: 28px;
+}
+
+.encabezado-pagina__titulo {
+    margin-bottom: 8px;
+}
+
+.encabezado-pagina__texto {
+    color: var(--texto-suave);
+}
 
 .pie {
     padding: 26px 16px;
@@ -401,12 +525,14 @@ textarea {
     background-color: var(--verde-oscuro);
     color: var(--crema);
 
-    font-size: 0.9rem;
     text-align: center;
+
+    font-size: 0.9rem;
 }
 
 .pie__lista {
     display: grid;
+
     gap: 4px;
 
     margin-top: 8px;
@@ -418,12 +544,12 @@ textarea {
 
 
 /* ============================================================
-   5. PÁGINAS (selectores combinados con la clase del body)
+   5. COMPONENTES POR PÁGINA
    ============================================================ */
 
-/* --- INICIO --- */
+/* ----- Inicio ----- */
 
-.pagina-inicio .hero {
+.hero {
     position: relative;
 
     overflow: hidden;
@@ -444,6 +570,7 @@ textarea {
 
 .hero__texto {
     position: absolute;
+
     inset: 0;
 
     display: flex;
@@ -452,17 +579,19 @@ textarea {
 
     padding: 26px;
 
-    background: linear-gradient(
-        90deg,
-        rgb(47 74 62 / 0.90),
-        rgb(47 74 62 / 0.35)
-    );
+    background:
+        linear-gradient(
+            90deg,
+            rgb(47 74 62 / 0.90),
+            rgb(47 74 62 / 0.35)
+        );
 
     color: var(--blanco);
 }
 
 .hero__titulo {
     max-width: 600px;
+
     margin-bottom: 10px;
 
     color: var(--mostaza-claro);
@@ -470,12 +599,19 @@ textarea {
 
 .hero__bajada {
     max-width: 34ch;
+
     font-size: 1.05rem;
 }
 
-.pagina-inicio .propuesta {
+.propuesta {
     padding: 26px;
+
+    border: 1px solid var(--borde);
+    border-radius: var(--radio);
+
     background-color: var(--mostaza-claro);
+
+    box-shadow: var(--sombra);
 }
 
 .propuesta__titulo {
@@ -486,13 +622,19 @@ textarea {
     max-width: 75ch;
 }
 
-/* --- CATÁLOGO --- */
+/* ----- Catálogo ----- */
 
-.pagina-catalogo .buscador {
+.buscador {
     margin-bottom: 34px;
+
     padding: 20px;
 
+    border: 1px solid var(--borde);
+    border-radius: var(--radio);
+
     background-color: var(--blanco);
+
+    box-shadow: var(--sombra);
 }
 
 .buscador__form {
@@ -505,26 +647,51 @@ textarea {
     gap: 10px;
 }
 
+.buscador__input,
+.buscador__select {
+    width: 100%;
+
+    padding: 11px 12px;
+
+    border: 1px solid var(--borde);
+    border-radius: 10px;
+
+    background-color: var(--blanco);
+    color: var(--texto);
+}
+
+.buscador__input:focus,
+.buscador__select:focus {
+    outline: 3px solid var(--mostaza-claro);
+    border-color: var(--mostaza-oscuro);
+}
+
+.buscador__limpiar {
+    justify-self: start;
+}
+
 .filtros__titulo {
     margin-top: 4px;
 }
 
-.buscador .filtro {
+.filtro {
     padding: 14px;
 
-    border-radius: var(--radio-chico);
+    border-radius: 10px;
 
     background-color: var(--crema);
 }
 
 .filtro__titulo {
     margin-bottom: 8px;
+
     color: var(--verde-oscuro);
 }
 
 .filtro__opcion {
     display: flex;
     align-items: center;
+
     gap: 7px;
 
     margin: 6px 0;
@@ -540,32 +707,49 @@ textarea {
     max-width: 320px;
 }
 
-.pagina-catalogo .categoria {
-    margin-top: 40px;
+.catalogo__vacio {
+    padding: 24px;
+
+    border: 1px dashed var(--borde);
+    border-radius: var(--radio);
+
+    color: var(--texto-suave);
+    text-align: center;
 }
 
-.categoria .seccion__titulo {
-    padding-bottom: 8px;
-    border-bottom: 2px solid var(--mostaza);
-}
-
-/* --- CARRITO --- */
+/* ----- Carrito ----- */
 
 .carrito-productos {
     display: grid;
-    gap: 18px;
 
-    min-width: 0;
+    gap: 18px;
 }
 
-.carrito-productos .item-carrito {
+.carrito__vacio {
+    padding: 24px;
+
+    border: 1px dashed var(--borde);
+    border-radius: var(--radio);
+
+    color: var(--texto-suave);
+    text-align: center;
+}
+
+.item-carrito {
     display: grid;
+
     grid-template-columns: 90px 1fr;
+
     gap: 5px 16px;
 
     padding: 16px;
 
+    border: 1px solid var(--borde);
+    border-radius: var(--radio);
+
     background-color: var(--blanco);
+
+    box-shadow: var(--sombra);
 }
 
 .item-carrito__img {
@@ -576,7 +760,7 @@ textarea {
 
     object-fit: cover;
 
-    border-radius: var(--radio-chico);
+    border-radius: 10px;
 }
 
 .item-carrito__titulo {
@@ -585,21 +769,24 @@ textarea {
 
 .item-carrito__detalle {
     color: var(--texto-suave);
+
     font-size: 0.9rem;
 }
 
 .item-carrito__subtotal {
     color: var(--verde-oscuro);
+
     font-weight: 700;
 }
 
-.item-carrito .btn--texto {
+.item-carrito__eliminar {
     justify-self: start;
 }
 
 .cantidad {
     display: flex;
     align-items: center;
+
     gap: 8px;
 }
 
@@ -625,8 +812,9 @@ textarea {
 .cantidad__valor {
     min-width: 25px;
 
-    font-weight: 600;
     text-align: center;
+
+    font-weight: 600;
 }
 
 .enlace-volver {
@@ -639,130 +827,152 @@ textarea {
     font-weight: 600;
 }
 
-.pagina-carrito .resumen {
-    margin-top: 28px;
+/* ----- Contacto y pedido (formularios en tarjeta) ----- */
+
+.contacto-form,
+.contacto-info {
     padding: 24px;
 
-    background-color: var(--mostaza-claro);
+    border: 1px solid var(--borde);
+    border-radius: var(--radio);
+
+    background-color: var(--blanco);
+
+    box-shadow: var(--sombra);
 }
 
-.resumen__titulo {
-    margin-bottom: 14px;
+.contacto-form__titulo,
+.contacto-info__titulo {
+    margin-bottom: 10px;
 }
 
-.resumen__linea {
-    display: flex;
-    justify-content: space-between;
-    gap: 16px;
+.contacto-form__texto {
+    margin-bottom: 18px;
 
-    margin-bottom: 8px;
+    color: var(--texto-suave);
 }
 
-.resumen__linea--total {
-    margin-top: 12px;
-    padding-top: 12px;
+.contacto-info {
+    margin-top: 28px;
+}
 
-    border-top: 1px solid var(--mostaza-oscuro);
+.contacto-info__lista {
+    display: grid;
+
+    gap: 4px;
+
+    margin-bottom: 22px;
+}
+
+.mapa {
+    display: block;
+
+    width: 100%;
+    height: 280px;
+
+    margin-top: 14px;
+
+    border: 0;
+    border-radius: 10px;
+}
+
+/* ----- Confirmación de pedido ----- */
+
+.confirmacion {
+    padding: 24px;
+
+    border: 1px solid var(--borde);
+    border-radius: var(--radio);
+
+    background-color: var(--blanco);
+
+    box-shadow: var(--sombra);
+}
+
+.confirmacion__titulo {
+    margin-bottom: 10px;
+}
+
+.confirmacion__lista {
+    display: grid;
+
+    gap: 4px;
+
+    margin: 12px 0;
+}
+
+.confirmacion__total {
+    color: var(--verde-oscuro);
 
     font-size: 1.2rem;
     font-weight: 700;
 }
 
-.resumen .btn {
-    width: 100%;
-    margin: 16px 0;
-}
-
-.resumen__nota {
-    margin-bottom: 0;
-
-    color: var(--texto-suave);
-
-    font-size: 0.85rem;
-    text-align: center;
-}
-
-/* --- CONTACTO --- */
-
-.contacto-form__titulo,
-.contacto-info__titulo {
-    margin-bottom: 12px;
-}
-
-.contacto-form__texto {
-    margin-bottom: 20px;
-    color: var(--texto-suave);
-}
-
-.pagina-contacto .formulario {
-    display: grid;
-    gap: 16px;
-
-    padding: 24px;
-
-    background-color: var(--blanco);
-}
-
-.formulario__campo {
-    display: flex;
-    flex-direction: column;
-    gap: 6px;
-
-    margin-bottom: 0;
-}
-
-.formulario__label {
-    color: var(--verde-oscuro);
-    font-weight: 600;
-}
-
-/* El textarea solo crece en alto */
-.formulario textarea.formulario__control {
-    min-height: 130px;
-    resize: vertical;
-}
-
-.formulario__acciones {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: flex-end;
-    gap: 12px;
-}
-
-.formulario__acciones .btn {
-    flex: 1 1 140px;
-}
-
-.pagina-contacto .contacto-info {
-    margin-top: 32px;
-    padding: 24px;
-
-    background-color: var(--mostaza-claro);
-}
-
-.contacto-info__lista {
-    display: grid;
-    gap: 6px;
-
-    margin-bottom: 24px;
-}
-
-.contacto-info .mapa {
-    width: 100%;
-    height: 280px;
-
-    margin-top: 12px;
-
-    border: 0;
-    border-radius: var(--radio-chico);
+.confirmacion__volver {
+    margin-top: 24px;
 }
 
 
 /* ============================================================
-   6. MEDIA QUERIES (mobile first)
+   6. REGLAS CONTEXTUALES (selectores combinados)
+   Ajustan un componente genérico según el lugar donde se usa.
    ============================================================ */
 
-/* --- Tablet: 600px o más --- */
+.cabecera .nav__link {
+    font-size: 0.95rem;
+}
+
+.nav__link .nav__contador {
+    margin-left: 4px;
+}
+
+.nav__link:hover .nav__contador {
+    background-color: var(--verde-oscuro);
+    color: var(--mostaza-claro);
+}
+
+.categoria {
+    margin-top: 40px;
+}
+
+.categoria .seccion__titulo {
+    padding-bottom: 8px;
+
+    border-bottom: 2px solid var(--mostaza);
+}
+
+.tarjeta .btn {
+    padding: 9px 16px;
+}
+
+.resumen .btn {
+    display: block;
+}
+
+.item-carrito .btn--texto {
+    font-size: 0.9rem;
+}
+
+.contacto-form .formulario__acciones {
+    margin-top: 6px;
+}
+
+.pagina-pedido .resumen__productos {
+    padding-bottom: 12px;
+
+    border-bottom: 1px solid var(--mostaza-oscuro);
+}
+
+.pie .pie__link:hover {
+    color: var(--blanco);
+}
+
+
+/* ============================================================
+   7. MEDIA QUERIES (mobile first)
+   En móvil todo se apila en una columna; el resumen del carrito
+   y del pedido queda debajo del contenido, siempre visible.
+   ============================================================ */
 
 @media (min-width: 600px) {
 
@@ -777,15 +987,11 @@ textarea {
     .pie__lista {
         display: flex;
         justify-content: center;
-        gap: 24px;
-    }
 
-    .formulario__acciones .btn {
-        flex: 0 0 auto;
+        gap: 24px;
     }
 }
 
-/* --- Escritorio: 900px o más --- */
 
 @media (min-width: 900px) {
 
@@ -833,42 +1039,52 @@ textarea {
     }
 
     .buscador__fila,
-    .filtros__titulo {
+    .filtros__titulo,
+    .buscador__limpiar {
         grid-column: 1 / -1;
     }
 
-    /* Carrito: productos a la izquierda, resumen a la derecha */
+    /* Carrito y pedido: lista a la izquierda, resumen a la derecha */
 
-    .pagina-carrito .contenido {
+    .pagina-carrito .contenido,
+    .pagina-pedido .contenido {
         display: grid;
+
         grid-template-columns: 2fr 1fr;
+
         gap: 0 32px;
+
         align-items: start;
     }
 
-    .pagina-carrito .encabezado-pagina {
+    .pagina-carrito .encabezado-pagina,
+    .pagina-pedido .encabezado-pagina {
         grid-column: 1 / -1;
     }
 
-    .pagina-carrito .resumen {
+    .pagina-carrito .resumen,
+    .pagina-pedido .resumen {
         position: sticky;
+
         top: 100px;
 
         margin-top: 0;
     }
 
-    /* Contacto: formulario a la izquierda, info a la derecha */
+    /* Contacto */
 
     .pagina-contacto .contenido {
         display: grid;
+
         grid-template-columns: 1fr 1fr;
+
         gap: 32px;
+
         align-items: start;
     }
 
     .pagina-contacto .encabezado-pagina {
         grid-column: 1 / -1;
-        margin-bottom: 0;
     }
 
     .pagina-contacto .contacto-info {

@@ -91,3 +91,21 @@ Ejemplo:
     --mostaza-claro: #f0e3b7;
     --crema: #faf7ef;
 }
+
+---
+
+## SP4 - Integración con JavaScript (primera parte)
+
+- **Catálogo renderizado con JavaScript**: las secciones y tarjetas se generan desde `src/recursos/js/vistas/catalogo.js`.
+- **Datos en un módulo independiente**: `src/recursos/js/datos/productos.js`.
+- **Código modularizado (ES Modules)**: `index.js` (punto de entrada), `almacen.js` (carrito en `localStorage`), `utilidades.js` y una vista por página en `vistas/`.
+- **Eventos**: búsqueda, filtros y orden en tiempo real; agregar al carrito; cambiar cantidad / eliminar; envío de formularios; contador del carrito en el menú.
+- **Vistas completas del proceso de compra**: `catalogo.html` → `carrito.html` → `pedido.html` → `confirmacion.html`.
+- **Correcciones SP3**: `.fiveserverrc` con el nombre correcto, formulario de contacto estilizado, resumen del carrito visible en móvil y CSS reordenado (reglas genéricas primero, selectores combinados para contexto, media queries al final).
+
+### Ejecutar
+
+```bash
+pnpm install
+pnpm dev
+```
