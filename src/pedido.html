@@ -1,0 +1,200 @@
+
+<!DOCTYPE html>
+<html lang="es">
+ 
+<head>
+    <meta charset="UTF-8">
+ 
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+ 
+    <title>Molido Café - Pedido</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Fraunces:wght@600;700&family=Inter:wght@400;600&display=swap"
+        rel="stylesheet"
+    >
+ 
+    <link
+        rel="stylesheet"
+        href="./recursos/estilos/estilos.css"
+    >
+</head>
+ 
+<body class="pagina-pedido">
+ 
+    <header class="cabecera">
+ 
+        <a
+            class="cabecera__logo"
+            href="./index.html"
+            aria-label="Ir al inicio"
+        >
+            <img
+                class="cabecera__img"
+                src="./recursos/imagenes/logocafe2 (4).jpg"
+                alt="Logo Molido Café"
+            >
+        </a>
+ 
+        <p class="cabecera__titulo">
+            Molido Café
+        </p>
+ 
+        <nav class="nav">
+ 
+            <a class="nav__link" href="./index.html">
+                Inicio
+            </a>
+ 
+            <a class="nav__link" href="./catalogo.html">
+                Catálogo
+            </a>
+ 
+            <a
+                class="nav__link nav__link--activo"
+                href="./carrito.html"
+            >
+                Carrito <span class="nav__contador" id="contador-carrito" hidden>0</span>
+            </a>
+ 
+            <a class="nav__link" href="./contacto.html">
+                Contacto
+            </a>
+ 
+        </nav>
+ 
+    </header>
+ 
+ 
+    <main class="contenido">
+ 
+        <section class="encabezado-pagina">
+ 
+            <h1 class="encabezado-pagina__titulo">
+                Finalizar pedido
+            </h1>
+ 
+            <p class="encabezado-pagina__texto">
+                Paso 2 de 3: completá tus datos de entrega y elegí cómo pagar.
+            </p>
+ 
+        </section>
+ 
+ 
+        <section class="contacto-form">
+ 
+            <h2 class="contacto-form__titulo">
+                Datos de entrega
+            </h2>
+ 
+            <form class="formulario" id="form-pedido" action="./confirmacion.html" method="get">
+ 
+                <p class="formulario__campo">
+                    <label class="formulario__label" for="id-nombre">Nombre y Apellido:</label>
+                    <input class="formulario__control" type="text" name="nombre" id="id-nombre" required>
+                </p>
+ 
+                <p class="formulario__campo">
+                    <label class="formulario__label" for="id-email">Correo electrónico:</label>
+                    <input class="formulario__control" type="email" name="email" id="id-email" required>
+                </p>
+ 
+                <p class="formulario__campo">
+                    <label class="formulario__label" for="id-telefono">Teléfono:</label>
+                    <input class="formulario__control" type="tel" name="telefono" id="id-telefono" required>
+                </p>
+ 
+                <p class="formulario__campo">
+                    <label class="formulario__label" for="id-direccion">Dirección de entrega:</label>
+                    <input class="formulario__control" type="text" name="direccion" id="id-direccion" required>
+                </p>
+ 
+                <p class="formulario__campo">
+                    <label class="formulario__label" for="id-pago">Medio de pago:</label>
+                    <select class="formulario__control" name="pago" id="id-pago" required>
+                        <option value="">Seleccione un medio de pago</option>
+                        <option value="efectivo">Efectivo al recibir</option>
+                        <option value="transferencia">Transferencia bancaria</option>
+                        <option value="tarjeta">Tarjeta de crédito / débito</option>
+                    </select>
+                </p>
+ 
+                <p class="formulario__campo">
+                    <label class="formulario__label" for="id-notas">Indicaciones adicionales:</label>
+                    <textarea class="formulario__control" name="notas" id="id-notas" rows="3"></textarea>
+                </p>
+ 
+                <div class="formulario__acciones">
+                    <a class="btn btn--secundario" href="./carrito.html">Volver al carrito</a>
+                    <button class="btn btn--primario" type="submit">Realizar pedido</button>
+                </div>
+ 
+            </form>
+ 
+        </section>
+ 
+ 
+        <aside class="resumen">
+ 
+            <h2 class="resumen__titulo">
+                Tu pedido
+            </h2>
+ 
+            <ul class="resumen__productos" id="resumen-productos"></ul>
+ 
+            <p class="resumen__linea">
+                <span>Subtotal</span>
+                <span data-resumen="subtotal">$0</span>
+            </p>
+ 
+            <p class="resumen__linea">
+                <span>Envío</span>
+                <span data-resumen="envio">$0</span>
+            </p>
+ 
+            <p class="resumen__linea resumen__linea--total">
+                <span>Total</span>
+                <span data-resumen="total">$0</span>
+            </p>
+ 
+            <p class="resumen__nota" data-resumen="nota"></p>
+ 
+        </aside>
+ 
+    </main>
+ 
+ 
+    <footer class="pie">
+ 
+        <p>
+            &copy; 2026 Molido Café. Todos los derechos reservados.
+        </p>
+ 
+        <ul class="pie__lista">
+ 
+            <li>
+                <a
+                    class="pie__link"
+                    href="https://instagram.com/@MolidoCafe"
+                    target="_blank"
+                >
+                    @MolidoCafe
+                </a>
+            </li>
+ 
+            <li>
+                Blvr. Chacabuco 490 - Bº Nueva Córdoba
+            </li>
+ 
+        </ul>
+ 
+    </footer>
+ 
+    <script type="module" src="./recursos/js/index.js"></script>
+ 
+</body>
+ 
+</html>
+ 

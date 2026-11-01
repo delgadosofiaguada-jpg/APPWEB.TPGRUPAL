@@ -1,0 +1,157 @@
+
+<!DOCTYPE html>
+<html lang="es">
+ 
+<head>
+    <meta charset="UTF-8">
+ 
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+ 
+    <title>Molido Café - Carrito</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Fraunces:wght@600;700&family=Inter:wght@400;600&display=swap"
+        rel="stylesheet"
+    >
+ 
+    <link
+        rel="stylesheet"
+        href="./recursos/estilos/estilos.css"
+    >
+</head>
+ 
+<body class="pagina-carrito">
+ 
+    <header class="cabecera">
+ 
+        <a
+            class="cabecera__logo"
+            href="./index.html"
+            aria-label="Ir al inicio"
+        >
+            <img
+                class="cabecera__img"
+                src="./recursos/imagenes/logocafe2 (4).jpg"
+                alt="Logo Molido Café"
+            >
+        </a>
+ 
+        <p class="cabecera__titulo">
+            Molido Café
+        </p>
+ 
+        <nav class="nav">
+ 
+            <a class="nav__link" href="./index.html">
+                Inicio
+            </a>
+ 
+            <a class="nav__link" href="./catalogo.html">
+                Catálogo
+            </a>
+ 
+            <a
+                class="nav__link nav__link--activo"
+                href="./carrito.html"
+            >
+                Carrito <span class="nav__contador" id="contador-carrito" hidden>0</span>
+            </a>
+ 
+            <a class="nav__link" href="./contacto.html">
+                Contacto
+            </a>
+ 
+        </nav>
+ 
+    </header>
+ 
+ 
+    <main class="contenido">
+ 
+        <section class="encabezado-pagina">
+ 
+            <h1 class="encabezado-pagina__titulo">
+                Tu carrito
+            </h1>
+ 
+            <p class="encabezado-pagina__texto">
+                Revisá tus productos seleccionados antes de confirmar tu pedido.
+            </p>
+ 
+        </section>
+ 
+ 
+        <section class="carrito-productos" id="lista-carrito">
+            <!-- Los productos se renderizan con JavaScript (recursos/js/vistas/carrito.js) -->
+        </section>
+ 
+ 
+        <aside class="resumen">
+ 
+            <h2 class="resumen__titulo">
+                Resumen del pedido
+            </h2>
+ 
+            <p class="resumen__linea">
+                <span>Subtotal</span>
+                <span data-resumen="subtotal">$0</span>
+            </p>
+ 
+            <p class="resumen__linea">
+                <span>Envío</span>
+                <span data-resumen="envio">$0</span>
+            </p>
+ 
+            <p class="resumen__linea resumen__linea--total">
+                <span>Total</span>
+                <span data-resumen="total">$0</span>
+            </p>
+ 
+            <a
+                class="btn btn--primario resumen__btn"
+                href="./pedido.html"
+                data-resumen="confirmar"
+            >
+                Confirmar pedido
+            </a>
+ 
+            <p class="resumen__nota" data-resumen="nota"></p>
+ 
+        </aside>
+ 
+    </main>
+ 
+ 
+    <footer class="pie">
+ 
+        <p>
+            &copy; 2026 Molido Café. Todos los derechos reservados.
+        </p>
+ 
+        <ul class="pie__lista">
+ 
+            <li>
+                <a
+                    class="pie__link"
+                    href="https://instagram.com/@MolidoCafe"
+                    target="_blank"
+                >
+                    @MolidoCafe
+                </a>
+            </li>
+ 
+            <li>
+                Blvr. Chacabuco 490 - Bº Nueva Córdoba
+            </li>
+ 
+        </ul>
+ 
+    </footer>
+ 
+    <script type="module" src="./recursos/js/index.js"></script>
+ 
+</body>
+ 
+</html>

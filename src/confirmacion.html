@@ -1,0 +1,125 @@
+
+<!DOCTYPE html>
+<html lang="es">
+ 
+<head>
+    <meta charset="UTF-8">
+ 
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+ 
+    <title>Molido Café - Pedido confirmado</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Fraunces:wght@600;700&family=Inter:wght@400;600&display=swap"
+        rel="stylesheet"
+    >
+ 
+    <link
+        rel="stylesheet"
+        href="./recursos/estilos/estilos.css"
+    >
+</head>
+ 
+<body class="pagina-confirmacion">
+ 
+    <header class="cabecera">
+ 
+        <a
+            class="cabecera__logo"
+            href="./index.html"
+            aria-label="Ir al inicio"
+        >
+            <img
+                class="cabecera__img"
+                src="./recursos/imagenes/logocafe2 (4).jpg"
+                alt="Logo Molido Café"
+            >
+        </a>
+ 
+        <p class="cabecera__titulo">
+            Molido Café
+        </p>
+ 
+        <nav class="nav">
+ 
+            <a class="nav__link" href="./index.html">
+                Inicio
+            </a>
+ 
+            <a class="nav__link" href="./catalogo.html">
+                Catálogo
+            </a>
+ 
+            <a
+                class="nav__link nav__link--activo"
+                href="./carrito.html"
+            >
+                Carrito <span class="nav__contador" id="contador-carrito" hidden>0</span>
+            </a>
+ 
+            <a class="nav__link" href="./contacto.html">
+                Contacto
+            </a>
+ 
+        </nav>
+ 
+    </header>
+ 
+ 
+    <main class="contenido">
+ 
+        <section class="encabezado-pagina">
+ 
+            <h1 class="encabezado-pagina__titulo">
+                Pedido confirmado
+            </h1>
+ 
+            <p class="encabezado-pagina__texto">
+                Paso 3 de 3: ¡listo! Ya recibimos tu pedido.
+            </p>
+ 
+        </section>
+ 
+ 
+        <section class="confirmacion" id="confirmacion">
+            <!-- Se completa con JavaScript (recursos/js/vistas/confirmacion.js) -->
+        </section>
+ 
+        <a class="btn btn--primario confirmacion__volver" href="./index.html">Volver al inicio</a>
+ 
+    </main>
+ 
+ 
+    <footer class="pie">
+ 
+        <p>
+            &copy; 2026 Molido Café. Todos los derechos reservados.
+        </p>
+ 
+        <ul class="pie__lista">
+ 
+            <li>
+                <a
+                    class="pie__link"
+                    href="https://instagram.com/@MolidoCafe"
+                    target="_blank"
+                >
+                    @MolidoCafe
+                </a>
+            </li>
+ 
+            <li>
+                Blvr. Chacabuco 490 - Bº Nueva Córdoba
+            </li>
+ 
+        </ul>
+ 
+    </footer>
+ 
+    <script type="module" src="./recursos/js/index.js"></script>
+ 
+</body>
+ 
+</html>
