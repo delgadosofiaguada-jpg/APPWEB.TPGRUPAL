@@ -1,4 +1,4 @@
-# Aplicaciones Web 1 - Proyecto SP3
+# Aplicaciones Web 1 - Proyecto SP4
 
 ## Molido Café — *El sabor de cada momento*
 
@@ -103,9 +103,3 @@ Ejemplo:
 - **Vistas completas del proceso de compra**: `catalogo.html` → `carrito.html` → `pedido.html` → `confirmacion.html`.
 - **Correcciones SP3**: `.fiveserverrc` con el nombre correcto, formulario de contacto estilizado, resumen del carrito visible en móvil y CSS reordenado (reglas genéricas primero, selectores combinados para contexto, media queries al final).
 
-### Ejecutar
-
-```bash
-pnpm install
-pnpm dev
-```
