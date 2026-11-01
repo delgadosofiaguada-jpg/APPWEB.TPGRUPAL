@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="es">
+ 
+<head>
+    <meta charset="UTF-8">
+ 
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+ 
+    <title>Molido Café - Catálogo</title>
+ 
+ 
+    <link
+        href="https://fonts.googleapis.com/css2?family=Fraunces:wght@600;700&family=Inter:wght@400;600&display=swap"
+        rel="stylesheet"
+    >
+ 
+    <link
+        rel="stylesheet"
+        href="./recursos/estilos/estilos.css"
+    >
+</head>
+ 
+<body class="pagina-catalogo">
+ 
+    <header class="cabecera">
+ 
+        <a
+            class="cabecera__logo"
+            href="./index.html"
+            aria-label="Ir al inicio"
+        >
+            <img
+                class="cabecera__img"
+                src="./recursos/imagenes/logocafe2 (4).jpg"
+                alt="Logo Molido Café"
+            >
+        </a>
+ 
+        <p class="cabecera__titulo">
+            Molido Café
+        </p>
+ 
+        <nav class="nav">
+ 
+            <a class="nav__link" href="./index.html">
+                Inicio
+            </a>
+ 
+            <a
+                class="nav__link nav__link--activo"
+                href="./catalogo.html"
+            >
+                Catálogo
+            </a>
+ 
+            <a class="nav__link" href="./carrito.html">
+                Carrito <span class="nav__contador" id="contador-carrito" hidden>0</span>
+            </a>
+ 
+            <a class="nav__link" href="./contacto.html">
+                Contacto
+            </a>
+ 
+        </nav>
+ 
+    </header>
+ 
+ 
+    <main class="contenido">
+ 
+        <section class="encabezado-pagina">
+ 
+            <h1 class="encabezado-pagina__titulo">
+                Catálogo
+            </h1>
+ 
+            <p class="encabezado-pagina__texto">
+                Conocé nuestros productos y elegí tu favorito.
+            </p>
+ 
+        </section>
+ 
+ 
+        <section class="buscador">
+ 
+            <form
+                class="buscador__form"
+                action="./catalogo.html"
+                method="get"
+            >
+ 
+                <div class="buscador__fila">
+ 
+                    <input
+                        class="buscador__input"
+                        type="search"
+                        name="buscar"
+                        placeholder="Buscar productos..."
+                        aria-label="Buscar productos"
+                    >
+ 
+                    <select
+                        class="buscador__select"
+                        name="categoria_busqueda"
+                        aria-label="Filtrar por categoría"
+                    >
+ 
+                        <option value="">
+                            Categoría
+                        </option>
+ 
+                        <option value="granos">
+                            Granos
+                        </option>
+ 
+                        <option value="molido">
+                            Molido
+                        </option>
+ 
+                        <option value="capsulas">
+                            Cápsulas
+                        </option>
+ 
+                        <option value="accesorios">
+                            Accesorios
+                        </option>
+ 
+                        <option value="pasteleria">
+                            Pastelería
+                        </option>
+ 
+                        <option value="combos">
+                            Combos
+                        </option>
+ 
+                    </select>
+ 
+ 
+                    <select
+                        class="buscador__select"
+                        name="orden"
+                        aria-label="Ordenar productos"
+                    >
+ 
+                        <option value="relevancia">
+                            Ordenar: Relevancia
+                        </option>
+ 
+                        <option value="precio_asc">
+                            Precio ascendente
+                        </option>
+ 
+                        <option value="precio_desc">
+                            Precio descendente
+                        </option>
+ 
+                        <option value="nombre_asc">
+                            Nombre A-Z
+                        </option>
+ 
+                        <option value="nombre_desc">
+                            Nombre Z-A
+                        </option>
+ 
+                    </select>
+ 
+                </div>
+ 
+ 
+                <h2 class="filtros__titulo">
+                    Filtros
+                </h2>
+ 
+ 
+                <section class="filtro">
+ 
+                    <h3 class="filtro__titulo">
+                        Categoría
+                    </h3>
+ 
+                    <label class="filtro__opcion">
+                        <input
+                            class="filtro__check"
+                            type="checkbox"
+                            name="categoria"
+                            value="granos"
+                        >
+                        Granos
+                    </label>
+ 
+                    <label class="filtro__opcion">
+                        <input
+                            class="filtro__check"
+                            type="checkbox"
+                            name="categoria"
+                            value="molido"
+                        >
+                        Molido
+                    </label>
+ 
+                    <label class="filtro__opcion">
+                        <input
+                            class="filtro__check"
+                            type="checkbox"
+                            name="categoria"
+                            value="capsulas"
+                        >
+                        Cápsulas
+                    </label>
+ 
+                    <label class="filtro__opcion">
+                        <input
+                            class="filtro__check"
+                            type="checkbox"
+                            name="categoria"
+                            value="accesorios"
+                        >
+                        Accesorios
+                    </label>
+ 
+                    <label class="filtro__opcion">
+                        <input
+                            class="filtro__check"
+                            type="checkbox"
+                            name="categoria"
+                            value="pasteleria"
+                        >
+                        Pastelería
+                    </label>
+ 
+                    <label class="filtro__opcion">
+                        <input
+                            class="filtro__check"
+                            type="checkbox"
+                            name="categoria"
+                            value="combos"
+                        >
+                        Combos
+                    </label>
+ 
+                </section>
+ 
+ 
+                <section class="filtro">
+ 
+                    <h3 class="filtro__titulo">
+                        Origen
+                    </h3>
+ 
+                    <label class="filtro__opcion">
+                        <input
+                            class="filtro__check"
+                            type="checkbox"
+                            name="origen"
+                            value="colombia"
+                        >
+                        Colombia
+                    </label>
+ 
+                    <label class="filtro__opcion">
+                        <input
+                            class="filtro__check"
+                            type="checkbox"
+                            name="origen"
+                            value="brasil"
+                        >
+                        Brasil
+                    </label>
+ 
+                    <label class="filtro__opcion">
+                        <input
+                            class="filtro__check"
+                            type="checkbox"
+                            name="origen"
+                            value="etiopia"
+                        >
+                        Etiopía
+                    </label>
+ 
+                    <label class="filtro__opcion">
+                        <input
+                            class="filtro__check"
+                            type="checkbox"
+                            name="origen"
+                            value="otros"
+                        >
+                        Otros
+                    </label>
+ 
+                </section>
+ 
+ 
+                <section class="filtro">
+ 
+                    <h3 class="filtro__titulo">
+                        Rango de precio
+                    </h3>
+ 
+                    <label for="precio" id="precio-valor">
+                        Hasta $15.000
+                    </label>
+ 
+                    <input
+                        class="filtro__rango"
+                        type="range"
+                        id="precio"
+                        name="precio"
+                        min="0"
+                        max="15000"
+                        step="500"
+                        value="15000"
+                    >
+ 
+                </section>
+ 
+                <button
+                    class="btn btn--secundario buscador__limpiar"
+                    type="reset"
+                >
+                    Limpiar filtros
+                </button>
+ 
+            </form>
+ 
+        </section>
+ 
+ 
+        <div class="catalogo" id="catalogo" aria-live="polite">
+            <!-- Las secciones y tarjetas se renderizan con JavaScript (recursos/js/vistas/catalogo.js) -->
+        </div>
+ 
+    </main>
+ 
+ 
+    <footer class="pie">
+ 
+        <p>
+            &copy; 2026 Molido Café. Todos los derechos reservados.
+        </p>
+ 
+        <ul class="pie__lista">
+ 
+            <li>
+                <a
+                    class="pie__link"
+                    href="https://instagram.com/@MolidoCafe"
+                    target="_blank"
+                >
+                    @MolidoCafe
+                </a>
+            </li>
+ 
+            <li>
+                Blvr. Chacabuco 490 - Bº Nueva Córdoba
+            </li>
+ 
+        </ul>
+ 
+    </footer>
+ 
+    <script type="module" src="./recursos/js/index.js"></script>
+ 
+</body>
+ 
+</html>
